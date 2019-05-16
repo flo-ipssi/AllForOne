@@ -30,9 +30,12 @@ class Search extends React.Component {
 
   // Charge les exercices au moment de la recherche 
   _searchList(searchTerm){
+    String.prototype.trim = function (){
+      return this.replace(/(^\s*)|(\s*$)/g,"");
+    }
     var updatedList = this.state.exercices;
     updatedList = updatedList.filter(item => {
-      return String(item.name).toLowerCase().includes(searchTerm.toLowerCase())
+      return String(item.name).toLowerCase().includes(searchTerm.toLowerCase().trim())
     })
     
     this.setState({ list : updatedList})
