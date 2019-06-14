@@ -16,23 +16,6 @@ export default class Planning extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Calendar />
-        {/*<View style={styles.content}>
-          <FlatList
-            data={this.state.data}
-            keyExtractor={this._keyExtractor}
-            renderItem={({item}) => 
-            <PlanningItem 
-              id={item.id} 
-              name = {item.exercice}
-              serie = {item.serie}
-            />}
-          />
-          <View style={{ width:295, height: 95, borderWidth: 1, borderColor: "#E7E7E7",marginLeft:15, marginTop:10}}>
-            <View style={{ justifyContent: 'center',alignItems: 'center'} }>
-              <Text style={{ fontSize:50, fontWeight:"Bold" }}>+</Text>
-            </View>
-          </View>
-        </View>*/}
       </ScrollView>
     );
   }

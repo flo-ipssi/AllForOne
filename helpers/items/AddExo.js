@@ -102,10 +102,6 @@ export default class AddExo extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   content: {
     borderRadius: 4, 
     borderWidth: 2, 

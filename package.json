@@ -12,12 +12,9 @@
     "prop-types": "15.7.2",
     "react-native-web": "^0.11.4",
     "firebase": "6.1.1",
-    "react-native-calendars": "1.32.0",
     "react-native-elements": "1.1.0",
     "react-native-paper": "2.2.8",
     "react-native-picker-modal-view": "1.2.2",
-    "react-native-selectme": "1.2.3",
-    "react-native-slideable-calendar-strip": "0.3.2",
     "react-native-vector-icons": "6.4.2",
     "react-navigation": "3.5.1"
   },

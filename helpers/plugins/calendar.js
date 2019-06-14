@@ -175,14 +175,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
   },
   content:{
-    alignItems: 'center',
     height:300,
   },
   TouchableOpacityStyle: {
     position: 'absolute',
     width: 50,
     height: 50,
-    alignItems: 'center',
     justifyContent: 'center', 
     right: 20,
     bottom: 60,
