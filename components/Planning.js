@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Text, View, StyleSheet, FlatList, ScrollView,TouchableOpacity, Image} from 'react-native'
-import { getData } from '../api/PlanningData.js'
 import PlanningItem from '../helpers/items/PlanningItem'
 import Calendar from '../helpers/plugins/calendar'
 
@@ -8,7 +7,6 @@ export default class Planning extends React.Component {
   constructor(){
     super();
     this.state={
-      data: getData(), 
     }
   }
   
@@ -44,10 +42,5 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     flex:1
-  },
-  content:{
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 5
   }
 });

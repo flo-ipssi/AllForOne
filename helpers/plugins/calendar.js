@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Text, View, StyleSheet, FlatList, ScrollView,TouchableOpacity, Image} from 'react-native'
+import { Modal, Platform, StyleSheet, View, Image, TouchableOpacity, TouchableHighlight, Text, FlatList, ScrollView } from "react-native";
 import PlanningItem from '../items/PlanningItem'
-import { getData } from '../../api/PlanningData.js'
+import Add from '../items/AddExo'
+import { getData } from '../../api/PlanningData'
 
 export default class Planning extends React.Component {
   constructor(){
@@ -12,8 +13,13 @@ export default class Planning extends React.Component {
       day: '', 
       listday: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'], 
       update: '', 
-      planning : []
+      planning : [],
+      modalVisible: false,
     }
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
   }
   
   _keyExtractor = (item, index) => item.id
@@ -93,10 +99,8 @@ export default class Planning extends React.Component {
   } 
 
   render() {
-
-  console.log('str', this.state.planning)
-
     return (    
+      <View>
       <View style={styles.container}>
         <View style={styles.date}>
           <View style={{ flex: 7, }}>
@@ -121,7 +125,7 @@ export default class Planning extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.content}>
+        <ScrollView style={styles.content}>
           <FlatList
             data={this.state.planning}
             keyExtractor={this._keyExtractor}
@@ -130,10 +134,29 @@ export default class Planning extends React.Component {
               id={item.id} 
               name = {item.exercice}
               serie = {item.serie}
-              day = {this.state.day}
+              day = {this.state.day} 
             />}
           />
-        </View>
+        </ScrollView>
+        <TouchableOpacity activeOpacity={0.5}  onPress={() => { this.setModalVisible(true); }} style={styles.TouchableOpacityStyle} >
+          <Image source={require('../../assets/round-add-button.png')}  style={styles.FloatingButtonStyle} />
+        </TouchableOpacity>
+        <Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => { this.setModalVisible(!this.state.modalVisible); }}>
+          <View style={{marginTop: 22}}>
+            <View>
+              <Add />
+              <TouchableHighlight
+                onPress={() => {this.setModalVisible(!this.state.modalVisible);}} style={styles.close} >
+                <Image source={require('../../assets/cross-remove-sign.png')}  style={styles.FloatingCrossStyle} />
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+      </View>
       </View>
     );
   }
@@ -141,18 +164,41 @@ export default class Planning extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
-    flex:1
+    padding: 12,
+    flexDirection: 'column',
+    height:550
   },
   date:{
+    height:50,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    flex:1,
-    flexDirection: 'row'
+    flexDirection: 'row', 
   },
   content:{
     alignItems: 'center',
-    justifyContent: 'center',
-    flex: 5
-  }
+    height:300,
+  },
+  TouchableOpacityStyle: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center', 
+    right: 20,
+    bottom: 60,
+  },
+  FloatingButtonStyle: {
+    resizeMode: 'contain',
+    width: 40,
+    height: 40,
+  },
+  FloatingCrossStyle: {
+    resizeMode: 'contain',
+    width: 25,
+    height: 25,
+  },
+  close:{
+    position: 'absolute',
+    right:2
+  },
 });

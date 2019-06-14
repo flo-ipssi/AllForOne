@@ -8,6 +8,7 @@ import MuscleScreen from '../components/Muscle';
 import ExerciceScreen from '../components/Exercice';
 import PlanningScreen from '../components/Planning'; 
 import ProfilScreen from '../components/Profil'; 
+import ConnexionScreen from '../components/Connexion'; 
 
 
 class LogoTitle extends React.Component {
@@ -73,7 +74,7 @@ const MuscleSearchNavigator =  createStackNavigator({
       headerTitleStyle: {
         fontWeight: 'bold',
       },
-    }
+    } 
   }
 })
 const PlanningSearchNavigator =  createStackNavigator({ 
@@ -89,7 +90,7 @@ const PlanningSearchNavigator =  createStackNavigator({
         fontWeight: 'bold',
       },
     }
-  } 
+  }   
 })
 const ProfilSearchNavigator =  createStackNavigator({
   Profil: {

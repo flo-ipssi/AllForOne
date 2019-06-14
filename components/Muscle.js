@@ -16,7 +16,7 @@ export default class Muscle extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <FlatList
           data={this.state.data}
           style={styles.list}
@@ -28,7 +28,7 @@ export default class Muscle extends React.Component {
             </TouchableOpacity>
           </View>}
           />
-      </ScrollView>
+      </View>
     );
   }
 }
