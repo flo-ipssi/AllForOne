@@ -154,7 +154,13 @@ const TabNavigator = createBottomTabNavigator({
       }
     }  
   }
-});
+},
+{
+    tabBarOptions: {
+      showLabel: false
+    },
+  }
+);
 
 
 const styles = StyleSheet.create({
