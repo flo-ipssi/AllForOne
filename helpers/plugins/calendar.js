@@ -108,7 +108,7 @@ export default class Planning extends React.Component {
               style={{textAlign: 'right',alignItems: 'flex-end'}}
               onPress={this.substractDay} >
               <Image 
-                style={{height: 20,width: 20,textAlign: 'right',alignItems: 'flex-end', marginHorizontal:10 }} 
+                style={{height: 20,width: 20,textAlign: 'right',alignItems: 'flex-end'}} 
                 source={require('../../assets/arrow-left.png')}/>
             </TouchableOpacity>
           </View>
@@ -120,7 +120,7 @@ export default class Planning extends React.Component {
             <TouchableOpacity
               onPress={this.addDay} >
               <Image 
-                style={{height: 20,width: 20, marginHorizontal:10}} 
+                style={{height: 20,width: 20}} 
                 source={require('../../assets/arrow-right.png')}/>
             </TouchableOpacity>
           </View>
@@ -137,16 +137,22 @@ export default class Planning extends React.Component {
               day = {this.state.day} 
             />}
           />
+
         </ScrollView>
-        <TouchableOpacity activeOpacity={0.5}  onPress={() => { this.setModalVisible(true); }} style={styles.TouchableOpacityStyle} >
-          <Image source={require('../../assets/round-add-button.png')}  style={styles.FloatingButtonStyle} />
-        </TouchableOpacity>
+
+      <TouchableOpacity
+         style={styles.button}
+         onPress={() => { this.setModalVisible(true); }}
+      >
+      <Text style={{fontSize: 20}}> + </Text>
+      </TouchableOpacity>
+
         <Modal
           animationType={'slide'}
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose={() => { this.setModalVisible(!this.state.modalVisible); }}>
-          <View style={{marginTop: 22}}>
+          <View style={{marginTop: 50}}>
             <View>
               <Add />
               <TouchableHighlight
@@ -166,16 +172,12 @@ const styles = StyleSheet.create({
   container: {
     padding: 12,
     flexDirection: 'column',
-    height:550
   },
   date:{
     height:50,
     alignItems: 'center',
     justifyContent: 'flex-start',
     flexDirection: 'row', 
-  },
-  content:{
-    height:300,
   },
   TouchableOpacityStyle: {
     position: 'absolute',
@@ -199,4 +201,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right:2
   },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#111",
+    borderStyle: "dashed",
+    borderRadius: 1,
+    marginTop: 10,
+  }
 });
