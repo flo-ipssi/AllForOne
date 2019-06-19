@@ -21,8 +21,8 @@ export default class Planning extends React.Component {
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
   }
-  
-  _keyExtractor = (item, index) => item.id
+
+  _keyExtractor = (item, index) => item.id;
   
   loadDate(){ 
     var day = new Date().getDate();
@@ -129,8 +129,9 @@ export default class Planning extends React.Component {
           <FlatList
             data={this.state.planning}
             keyExtractor={this._keyExtractor}
-            renderItem={({item}) => 
+            renderItem={({item, index}) => 
             <PlanningItem 
+              key={index}
               id={item.id} 
               name = {item.exercice}
               serie = {item.serie}

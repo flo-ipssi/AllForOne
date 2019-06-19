@@ -1,14 +1,16 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
 import { Text, View, StyleSheet, Image } from 'react-native';
-import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
 import HomeScreen from '../components/Home';
 import MuscleScreen from '../components/Muscle';
 import ExerciceScreen from '../components/Exercice';
 import PlanningScreen from '../components/Planning'; 
 import ProfilScreen from '../components/Profil'; 
-import ConnexionScreen from '../components/Connexion'; 
+import SignInScreen from '../components/SingIn';
+import SignUpScreen from '../components/SignUp';
+import LoginScreen from '../components/Login';
 
 
 class LogoTitle extends React.Component {
@@ -32,6 +34,15 @@ class LogoTitle extends React.Component {
 }
 
 
+const LoginStack = createStackNavigator({
+  Login : { screen : LoginScreen},
+  SignIn: { 
+    screen: SignInScreen,
+  },
+  SignUp: {
+    screen: SignUpScreen,
+  },
+});
 
 const HomeSearchNavigator =  createStackNavigator({
   Home: {
@@ -159,7 +170,7 @@ const TabNavigator = createBottomTabNavigator({
     tabBarOptions: {
       showLabel: false
     },
-  }
+}
 );
 
 
@@ -170,4 +181,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createAppContainer(TabNavigator);
+const Navigator = createSwitchNavigator({
+  Login: LoginStack,
+  Bottom : TabNavigator,
+});
+
+export default createAppContainer(Navigator);
