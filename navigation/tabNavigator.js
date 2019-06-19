@@ -168,7 +168,9 @@ const TabNavigator = createBottomTabNavigator({
 },
 {
     tabBarOptions: {
-      showLabel: false
+      showLabel: false,
+        activeBackgroundColor: '#bfbfbf', // Couleur d'arrière-plan de l'onglet sélectionné
+        inactiveBackgroundColor: '#FFFFFF', // Couleur d'arrière-plan des onglets non sélectionnés
     },
 }
 );
