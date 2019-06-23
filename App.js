@@ -4,7 +4,6 @@ import { Constants } from 'expo';
 
 import TabNavigation from './navigation/tabNavigator'
 
-
 export default class App extends React.Component {
   render() {
     return (

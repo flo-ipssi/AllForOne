@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {ScrollView,Picker,Platform,StyleSheet, TextInput, View, Text, FlatList, Button} from "react-native";
+import {ScrollView, Picker, Platform, StyleSheet, TextInput, View, Text, FlatList, Button, Modal } from "react-native";
 import {getData} from '../../api/MuscleData'
 
 const BLUE = "#428AF8"
@@ -47,7 +47,7 @@ export default class AddExo extends React.Component {
     const {isFocused, serie, data, exercice} = this.state
     const { onFocus, onBlur, ...otherProps} = this.props
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView >
         <View style={styles.content}>
           <Picker
             mode="dropdown"

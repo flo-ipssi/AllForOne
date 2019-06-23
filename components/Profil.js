@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
-import { Icon } from 'react-native-elements'
+//import { Icon } from 'react-native-elements'
+import Icon from '@expo/vector-icons/MaterialIcons';
+
+
 
 export default class Profil extends React.Component {
   render() {
@@ -8,9 +11,13 @@ export default class Profil extends React.Component {
       <View>
 
       <View style={styles.settings}>
+
       <Icon name='settings'
             color='#333'
       />
+
+
+
 
       </View>
 

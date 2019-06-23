@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   date_text: {
     textAlign: 'right',
     fontSize: 14
-  }
+  },
 })
 
 export default ExerciceItemsolo
