@@ -10,8 +10,6 @@ import PlanningScreen from '../components/Planning';
 import ProfilScreen from '../components/Profil'; 
 import SignInScreen from '../components/SingIn';
 import SignUpScreen from '../components/SignUp';
-import LoginScreen from '../components/Login';
-
 
 class LogoTitle extends React.Component {
   render() {
@@ -35,7 +33,6 @@ class LogoTitle extends React.Component {
 
 
 const LoginStack = createStackNavigator({
-  Login : { screen : LoginScreen},
   SignIn: { 
     screen: SignInScreen,
   },

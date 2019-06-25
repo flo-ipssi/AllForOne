@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {ScrollView, Picker, Platform, StyleSheet, TextInput, View, Text, FlatList, Button, Modal } from "react-native";
 import {getData} from '../../api/MuscleData'
+import ActionSheet from 'react-native-actionsheet'
 
 const BLUE = "#428AF8"
 const LIGHT_GRAY = "#D3D3D3"
@@ -43,24 +44,26 @@ export default class AddExo extends React.Component {
     console.log('str',this.state.serie)
   }
 
+  showActionSheet = () => {
+    this.ActionSheet.show()
+  }
+
   render() {
     const {isFocused, serie, data, exercice} = this.state
     const { onFocus, onBlur, ...otherProps} = this.props
     return (
-      <ScrollView >
-        <View style={styles.content}>
-          <Picker
-            mode="dropdown"
-            style={{width:300}}
-            itemStyle = {{flex:1}}
-            placeholder="Choix de l'exercice"
-            selectedValue={exercice}
-            onValueChange={itemValue => this.setState({ exercice: itemValue })}>
-            {data.map((i, index) => (
-              <Picker.Item key={index} label={i.name} value={i.name} />
-            ))}
-          </Picker>
-        </View>
+      <ScrollView style={styles.container}>
+      <View>
+        <Text onPress={this.showActionSheet}>Open ActionSheet</Text>
+        <ActionSheet
+          ref={o => this.ActionSheet = o}
+          title={'Which one do you like ?'}
+          options={['Apple', 'Banana', 'Apple', 'Banana', 'Apple', 'Banana', 'cancel']}
+          cancelButtonIndex={2}
+          destructiveButtonIndex={1}
+          onPress={(index) => { /* do something */ }}
+        />
+      </View>
         <View style={styles.content}>
           <Picker
             mode="dropdown"

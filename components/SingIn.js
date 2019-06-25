@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Image, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button, Image, ScrollView, TouchableOpacity } from 'react-native';
 import * as firebase from 'firebase'
 
 firebase.initializeApp(
@@ -41,10 +41,18 @@ export default class SignIn extends React.Component {
     if(this.state.loading){
       return <Text>loading</Text>
     }else{
-      return <View  style={ styles.button }>
-      <Button 
-        onPress = {this.onLoginPress.bind(this)}
-        title="Connexion"/>
+      return <View>
+              <TouchableOpacity onPress= {this.onLoginPress.bind(this)}>
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Connexion</Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={ () => this.props.navigation.push('SignUp') }>
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Inscription</Text>
+                </View>
+              </TouchableOpacity>
       </View>
     }
   }
@@ -54,7 +62,7 @@ export default class SignIn extends React.Component {
       <ScrollView style={styles.container}>
         <View style={styles.logo}>
           <View style={{}}>
-            <Image style={{width:160, height:120}} source={require('../assets/logo.png')} />
+            <Image style={{width:120, height:80}} source={require('../assets/logo.png')} />
           </View>
           <Text style={styles.slogan}>This is All for One </Text>
         </View>
@@ -80,7 +88,6 @@ export default class SignIn extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(52, 52, 52, 0.1)'
   }, 
   logo: {
     flex: 2,
@@ -89,7 +96,8 @@ const styles = StyleSheet.create({
     marginTop:120
   }, 
   slogan: {
-    marginTop:20
+    marginTop:20,
+    marginBottom: 20
   }, 
   input_style:{
     flex: 2, 
@@ -108,7 +116,15 @@ const styles = StyleSheet.create({
     borderTopWidth: 0
   }, 
   button:{
-    marginTop:10,
+    marginTop: 15,
+    padding: 10,
+    width: 200,
+    backgroundColor: '#2196F3',
+    borderRadius: 30,
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: '#fff'
   }
   
 });

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Image, ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button, Image, ScrollView, TouchableOpacity} from 'react-native';
 
 export default class SignUp extends React.Component {
   static navigationOptions = { header: null }
@@ -7,7 +7,6 @@ export default class SignUp extends React.Component {
     super(props);
     this.state = {email:'', password:'', error:'', loading:false}
   }
-
 
   onSignUpPress(){
     this.setState({error:'' , loading:true});
@@ -52,7 +51,18 @@ export default class SignUp extends React.Component {
               style={ styles.textinput_style }
               placeholder='Confirmer le mot de passe'
             />
-            <View  style={ styles.button }><Button title="S'inscrire"/></View>
+            
+            <TouchableOpacity onPress= {this._onPressButton}>
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Valider</Text>
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={ () => this.props.navigation.push('SignIn') }>
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Retour</Text>
+                </View>
+              </TouchableOpacity>
           </View>
         </ScrollView >
       </View>
@@ -63,7 +73,6 @@ export default class SignUp extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 124, 249, 0.1)'
   }, 
   logo: {
     flex: 1,
@@ -92,7 +101,15 @@ const styles = StyleSheet.create({
     borderTopWidth: 0
   }, 
   button:{
-    marginTop:30,
+    marginTop: 15,
+    padding: 10,
+    width: 200,
+    backgroundColor: '#2196F3',
+    borderRadius: 30,
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: '#fff'
   }
   
 });
