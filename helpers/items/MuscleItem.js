@@ -3,13 +3,21 @@ import { Text, View, StyleSheet, FlatList, ScrollView,TouchableOpacity, Image,Im
 
 
 export default class MuscleItem extends React.Component {
+  constructor(){
+    super();
+    this.state={
+        img: false,
+    }
+}
+
+
+
   render() {
-    const muscle = this.props.muscle;
+    const muscle = this.props.muscle; 
+
     return (
       <View style={styles.modal}>
-      {/*<View style={styles.modal}>
-      </View>*/}
-        <ImageBackground source={{uri: 'https://lifefitness.fr/sites/g/files/dtv391/f/CybexAbout-950x650.jpg'}} style={{width: '100%', height: '100%'}}>
+        <ImageBackground source={{uri:  muscle.img}} style={{width: '100%', height: '100%'}}>
           <Text>{muscle.name}</Text>
         </ImageBackground>
       </View>

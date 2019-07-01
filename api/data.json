@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "name": "Abdominaux",
+        "category_muscle": 0,
+        "img" : "../assets/muscle/abdominaux.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Pectoraux",
+        "category_muscle": 1,
+        "img" : "../assets/muscle/abdominaux.jpg"
+    },
+   {
+        "id": 2,
+        "name": "Biceps",
+        "category_muscle": 2,
+        "img" : "../assets/muscle/biceps.jpg"
+   },
+   {
+        "id": 3,
+        "name": "Epaules",
+        "category_muscle": 3,
+        "img" : "../assets/muscle/epaules.jpg"
+   },
+   {
+        "id": 4,
+        "name": "Triceps",
+        "category_muscle": 4,
+        "img" : "../assets/muscle/triceps.jpg"
+   },
+   {
+        "id": 5,
+        "name": "Dos",
+        "category_muscle": 5,
+        "img" : "../assets/muscle/dos.jpg"
+   },
+   {
+        "id": 6,
+        "name": "Quadriceps",
+        "category_muscle": 6,
+        "img" : "../assets/muscle/quadriceps.jpg"
+   }
+]
