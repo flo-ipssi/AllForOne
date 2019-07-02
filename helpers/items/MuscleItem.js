@@ -18,7 +18,9 @@ export default class MuscleItem extends React.Component {
     return (
       <View style={styles.modal}>
         <ImageBackground source={{uri:  muscle.img}} style={{width: '100%', height: '100%'}}>
-          <Text>{muscle.name}</Text>
+        <View style={styles.containerText}>
+          <Text style={styles.imgText}>{muscle.name}</Text>
+        </View>
         </ImageBackground>
       </View>
     )
@@ -28,8 +30,18 @@ export default class MuscleItem extends React.Component {
 const styles = StyleSheet.create({
   modal:{
     alignSelf: 'stretch',
+    marginTop: 1,
+    height:200,
+  },
+  containerText:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    height:200,
+  },
+  imgText:{
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 24,
     textAlign: 'center',
-    marginTop: 15,
-    height:200
   }
 })
