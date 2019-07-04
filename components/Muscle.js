@@ -25,8 +25,6 @@ export default class Muscle extends React.Component {
         });
       }
 
-    _keyExtractor = (item, index) => item.id;
-
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -34,10 +32,10 @@ export default class Muscle extends React.Component {
                 <FlatList
                     data={this.state.data}
                     style={styles.list}
-                    keyExtractor={this._keyExtractor}
+                    keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => <View>
                         <TouchableOpacity
-                            onPress = {() => {navigate('Exercice', {itemId: item.category_muscle })}} >
+                            onPress = {() => {navigate('Exercice', {itemId: item.id, muscleId: item.id, })}} >
                             <MuscleItem key={item.id} muscle={item} />
                         </TouchableOpacity>
                     </View>}

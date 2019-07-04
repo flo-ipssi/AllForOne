@@ -1,20 +1,20 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-chart-kit
 
 PATH: 
-  /anaconda3/bin:/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/jeremy/PROJET_IPSSI/AllForOne/node_modules/.bin
+  C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\PuTTY\;C:\wamp64\bin\php\php7.1.9;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Yarn\bin\;C:\Users\shuns\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\shuns\AppData\Local\Programs\Python\Python37-32\;C:\Ruby24-x64\bin;C:\Users\shuns\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Docker Toolbox;C:\Users\shuns\AppData\Roaming\Composer\vendor\bin;C:\Users\shuns\AppData\Roaming\npm;C:\wamp64\bin\php\php7.2.10;C:\Users\shuns\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.16.0
 
 Node version: 
-  10.15.0
+  9.11.1
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/jeremy/PROJET_IPSSI/AllForOne/node_modules/.yarn-integrity'
+  Error: ELOOP: too many symbolic links encountered, scandir 'C:\Users\shuns\AppData\Local\Yarn\Cache\v4\npm-regenerator-runtime-0.0.0-dbb53f87-163b-416d-bce1-3224a2896fc8-1562058896625\node_modules\regenerator-runtime'
 
 npm manifest: 
   {
@@ -26,16 +26,19 @@ npm manifest:
     "main": "node_modules/expo/AppEntry.js",
     "dependencies": {
       "expo": "^32.0.0",
+      "firebase": "6.1.1",
+      "prop-types": "15.7.2",
       "react": "16.5.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-      "prop-types": "15.7.2",
-      "react-native-web": "^0.11.4",
-      "firebase": "6.1.1",
+      "react-native-actionsheet": "^2.4.2",
+      "react-native-chart-kit": "^3.0.0",
       "react-native-elements": "1.1.0",
       "react-native-paper": "2.2.8",
       "react-native-picker-modal-view": "1.2.2",
       "react-native-vector-icons": "6.4.2",
-      "react-navigation": "3.5.1"
+      "react-native-web": "^0.11.4",
+      "react-navigation": "3.5.1",
+      "regenerator-runtime": "file:node_modules/regenerator-runtime"
     },
     "scripts": {
       "start": "expo start",
@@ -5550,6 +5553,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
     integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
   
+  react-native-actionsheet@^2.4.2:
+    version "2.4.2"
+    resolved "https://registry.yarnpkg.com/react-native-actionsheet/-/react-native-actionsheet-2.4.2.tgz#6a00dd51a75ef2c8974312130e405af73191500f"
+    integrity sha512-DBoWIvVwuWXuptF4t46pBqkFxaUxS+rsIdHiA05t0n4BdTIDV2R4s9bLEUVOGzb94D7VxIamsXZPA/3mmw+SXg==
+  
   react-native-branch@2.2.5:
     version "2.2.5"
     resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
@@ -5577,7 +5585,7 @@ Lockfile:
       invariant "^2.2.2"
       prop-types "^15.5.10"
   
-  "react-native-maps@github:expo/react-native-maps#v0.22.1-exp.0":
+  react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
     version "0.22.1"
     resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
   

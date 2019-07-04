@@ -4,7 +4,6 @@ import { StyleSheet, View, Text, Image, Button, FlatList } from 'react-native'
 
 class PlanningItem extends React.Component {
   _keyExtractor = (item, index) => item.id;
-
   render() {
     const exercice = this.props;
     return (

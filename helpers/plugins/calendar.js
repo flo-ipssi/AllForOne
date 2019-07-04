@@ -3,6 +3,7 @@ import { Modal, Platform, StyleSheet, View, Image, TouchableOpacity, TouchableHi
 import PlanningItem from '../items/PlanningItem'
 import Add from '../items/AddExo'
 import { getData } from '../../api/PlanningData'
+import firebase from '../../api/APIKeyfirebase';
 
 export default class Planning extends React.Component {
   constructor(){
@@ -44,10 +45,21 @@ export default class Planning extends React.Component {
   loadDay() {
     var array = this.state.listday;
     var d = new Date();
-    var n = d.getDay()
-    var exos = this.state.data.filter(exo => exo.day === "Lundi") 
-  
-    this.setState({ day: array[n], planning : exos })
+    var n = d.getDay();
+    var nameDay = array[n];
+    let ref = firebase.database().ref('/users/6g9pl2Bfp0XkbTP6tz04FrtaMZk2/planning/' + nameDay);
+    ref.on('value', snapshot => {
+      const exos = snapshot.val();
+      let listExos = exos.exercices.map( exo => {
+        console.log(exo.exercice);
+        let nameExo = firebase.database().ref('/exercices/' + exo.exercice);
+        nameExo.on('value', snapshot => {
+            exo.name = snapshot.val().name;
+            console.log(exo.name);
+        });
+      });
+      this.setState({ day: array[n], planning : exos.exercices })
+    });
   }
 
   componentWillMount(){
@@ -73,7 +85,20 @@ export default class Planning extends React.Component {
 
     var array = this.state.listday 
     var n = date.getDay()
-    this.setState({  day: array[n], date : dateComplet, update: date  })
+    var nameDay = array[n];
+    let ref = firebase.database().ref('/users/6g9pl2Bfp0XkbTP6tz04FrtaMZk2/planning/' + nameDay);
+        ref.on('value', snapshot => {
+          const exos = snapshot.val();
+          let listExos = exos.exercices.map( exo => {
+            console.log(exo.exercice);
+            let nameExo = firebase.database().ref('/exercices/' + exo.exercice);
+            nameExo.on('value', snapshot => {
+                exo.name = snapshot.val().name;
+                console.log(exo.name);
+            });
+          });
+    this.setState({ day: array[n], date : dateComplet , update: date , planning : exos.exercices })
+    });
 
   } 
  
@@ -95,8 +120,21 @@ export default class Planning extends React.Component {
 
     var array = this.state.listday 
     var n = date.getDay()
-    this.setState({ day: array[n], date : dateComplet , update: date  })
-  } 
+    var nameDay = array[n];
+    let ref = firebase.database().ref('/users/6g9pl2Bfp0XkbTP6tz04FrtaMZk2/planning/' + nameDay);
+        ref.on('value', snapshot => {
+          const exos = snapshot.val();
+          let listExos = exos.exercices.map( exo => {
+            console.log(exo.exercice);
+            let nameExo = firebase.database().ref('/exercices/' + exo.exercice);
+            nameExo.on('value', snapshot => {
+                exo.name = snapshot.val().name;
+                console.log(exo.name);
+            });
+          });
+    this.setState({ day: array[n], date : dateComplet , update: date , planning : exos.exercices })
+    });
+  }
 
   render() {
     return (    
@@ -131,10 +169,9 @@ export default class Planning extends React.Component {
             keyExtractor={this._keyExtractor}
             renderItem={({item, index}) => 
             <PlanningItem 
-              key={index}
-              id={item.id} 
-              name = {item.exercice}
-              serie = {item.serie}
+              key={item.id}
+              name = {item.name}
+              serie = {item.series}
               day = {this.state.day} 
             />}
           />

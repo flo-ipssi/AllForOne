@@ -33,12 +33,10 @@ export default class Profil extends React.Component {
       />
 
 
-
-
       </View>
 
       <View style={styles.container}>
-      <ImageBackground source={require('../assets/workout.jpg')} style={ styles.image } imageStyle={{ borderRadius: 38 }}>
+      <ImageBackground source={{uri: 'https://firebasestorage.googleapis.com/v0/b/all-for-one-69.appspot.com/o/Gender%2Fboy2.png?alt=media&token=42bd0f31-3b7f-46ca-806c-9c5d9a249c27'}} style={ styles.image } imageStyle={{ borderRadius: 38 }}>
         
       </ImageBackground>
 

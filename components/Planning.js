@@ -10,7 +10,7 @@ export default class Planning extends React.Component {
     }
   }
   
-  _keyExtractor = (item, index) => item.id
+  _keyExtractor = (item, index) => item.id;
 
   render() {
     return (

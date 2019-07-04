@@ -13,8 +13,7 @@ export default class MuscleItem extends React.Component {
 
 
   render() {
-    const muscle = this.props.muscle; 
-
+    const muscle = this.props.muscle;
     return (
       <View style={styles.modal}>
         <ImageBackground source={{uri:  muscle.img}} style={{width: '100%', height: '100%'}}>
