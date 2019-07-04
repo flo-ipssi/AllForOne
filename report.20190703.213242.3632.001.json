@@ -1,0 +1,324 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190703.213242.3632.001.json",
+    "dumpEventTime": "2019-07-03T21:32:42Z",
+    "processId": 3632,
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\silve\\Documents\\IPSSI\\2e année\\react-native\\AllForOne\\node_modules\\react-native\\local-cli\\cli.js",
+      "start",
+      "--port",
+      "19001",
+      "--customLogReporterPath",
+      "C:\\Users\\silve\\Documents\\IPSSI\\2e année\\react-native\\AllForOne\\node_modules\\expo\\tools\\LogReporter.js",
+      "--assetExts",
+      "ttf,mp4,otf,xml"
+    ],
+    "nodejsVersion": "v11.11.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "11.11.0",
+      "v8": "7.0.276.38-node.18",
+      "uv": "1.26.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.34.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1a",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.11.0/node-v11.11.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.11.0/node-v11.11.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v11.11.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.17134",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "host": "DESKTOP-KDBRL46"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6ca9cbc4e",
+      "symbol": "SSL_SESSION_get0_peer+15022"
+    },
+    {
+      "pc": "0x00007ff6ca9cab04",
+      "symbol": "SSL_SESSION_get0_peer+10596"
+    },
+    {
+      "pc": "0x00007ff6ca9ca336",
+      "symbol": "SSL_SESSION_get0_peer+8598"
+    },
+    {
+      "pc": "0x00007ff6caab703a",
+      "symbol": "uv_loop_fork+86202"
+    },
+    {
+      "pc": "0x00007ff6cae9e49e",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+798"
+    },
+    {
+      "pc": "0x00007ff6cae9e3d7",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+599"
+    },
+    {
+      "pc": "0x00007ff6caf491a4",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+14068"
+    },
+    {
+      "pc": "0x00007ff6caf3efb2",
+      "symbol": "v8::internal::Heap::CollectGarbage+7234"
+    },
+    {
+      "pc": "0x00007ff6caf3d7c8",
+      "symbol": "v8::internal::Heap::CollectGarbage+1112"
+    },
+    {
+      "pc": "0x00007ff6caf470f7",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5703"
+    },
+    {
+      "pc": "0x00007ff6caf47176",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5830"
+    },
+    {
+      "pc": "0x00007ff6cb0c8481",
+      "symbol": "v8::internal::Factory::NewFillerObject+49"
+    },
+    {
+      "pc": "0x00007ff6cb17dbb6",
+      "symbol": "v8::internal::StoreBuffer::StoreBufferOverflow+27190"
+    },
+    {
+      "pc": "0x0000010be1050481",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1496465408,
+    "totalCommittedMemory": 1496465408,
+    "usedMemory": 1425389008,
+    "availableMemory": 31666696,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 524288,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2062336,
+        "used": 117416,
+        "available": 1944920
+      },
+      "old_space": {
+        "memorySize": 1456672768,
+        "committedMemory": 1456672768,
+        "capacity": 1393247752,
+        "used": 1393220200,
+        "available": 27552
+      },
+      "code_space": {
+        "memorySize": 1572864,
+        "committedMemory": 1572864,
+        "capacity": 1446944,
+        "used": 1446944,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 2633728,
+        "committedMemory": 2633728,
+        "capacity": 1422800,
+        "used": 1422800,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 30867456,
+        "committedMemory": 30867456,
+        "capacity": 58360288,
+        "used": 29148128,
+        "available": 29212160
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "ANDROID_HOME": "C:\\Users\\silve\\AppData\\Local\\Android\\Sdk",
+    "APPDATA": "C:\\Users\\silve\\AppData\\Roaming",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "Thu Mar  7 12:14:36 2019",
+    "CLASSPATH": ".;",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-KDBRL46",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "ELECTRON_RUN_AS_NODE": "1",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GOOGLE_API_KEY": "no",
+    "GOOGLE_DEFAULT_CLIENT_ID": "no",
+    "GOOGLE_DEFAULT_CLIENT_SECRET": "no",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\silve",
+    "INIT_CWD": "C:\\Users\\silve\\Documents\\IPSSI\\2e année\\react-native\\AllForOne",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_201",
+    "LOCALAPPDATA": "C:\\Users\\silve\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-KDBRL46",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "NODE_PATH": "null",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.16.0 npm/? node/v11.11.0 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "C:\\Program Files (x86)\\Yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "expo start",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_dependencies_expo": "^32.0.0",
+    "npm_package_dependencies_firebase": "6.1.1",
+    "npm_package_dependencies_prop_types": "15.7.2",
+    "npm_package_dependencies_react": "16.5.0",
+    "npm_package_dependencies_react_native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "npm_package_dependencies_react_native_actionsheet": "^2.4.2",
+    "npm_package_dependencies_react_native_chart_kit": "^3.0.0",
+    "npm_package_dependencies_react_native_elements": "^1.1.0",
+    "npm_package_dependencies_react_native_paper": "2.2.8",
+    "npm_package_dependencies_react_native_picker_modal_view": "1.2.2",
+    "npm_package_dependencies_react_native_vector_icons": "6.4.2",
+    "npm_package_dependencies_react_native_web": "^0.11.4",
+    "npm_package_dependencies_react_navigation": "3.5.1",
+    "npm_package_description": "No description",
+    "npm_package_main": "node_modules/expo/AppEntry.js",
+    "npm_package_name": "allforone",
+    "npm_package_private": "true",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_scripts_android": "expo start --android",
+    "npm_package_scripts_eject": "expo eject",
+    "npm_package_scripts_ios": "expo start --ios",
+    "npm_package_scripts_start": "expo start",
+    "npm_package_version": "0.0.0",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\silve\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\silve\\AppData\\Local\\Temp\\yarn--1562181477760-0.5837617801193504;C:\\Users\\silve\\Documents\\IPSSI\\2e année\\react-native\\AllForOne\\node_modules\\.bin;C:\\Users\\silve\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Python37\\Scripts\\;C:\\Python37\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\wamp64\\bin\\php\\php7.1.9\\;C:\\composer;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Python27;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\wamp64\\bin\\php\\php7.2.12;C:\\Program Files\\PostgreSQL\\10\\bin;C:\\Program Files\\Amazon\\AWSCLI\\bin\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Java\\jdk1.8.0_201\\bin;C:\\Program Files (x86)\\Druide\\Antidote 9\\Application\\Bin64\\;C:\\Program Files (x86)\\Druide\\Antidote 9\\Application\\Bin32\\;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Users\\silve\\AppData\\Local\\Programs\\Python\\Python37-32\\Scripts\\;C:\\Users\\silve\\AppData\\Local\\Programs\\Python\\Python37-32\\;C:\\Ruby24-x64\\bin;C:\\Ruby25-x64\\bin;C:\\Users\\silve\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\silve\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\wamp64\\bin\\php\\php7.2.10;C:\\Users\\silve\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\silve\\AppData\\Roaming\\npm;C:\\Users\\silve\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\silve\\AppData\\Local\\Yarn\\bin;C:\\Users\\silve\\AppData\\Local\\Android\\Sdk;",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.RB;.RBW;.CPL",
+    "php": "C:\\wamp64\\bin\\php\\php7.2.10",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e09",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\silve\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "REACT_NATIVE_APP_ROOT": "C:\\Users\\silve\\Documents\\IPSSI\\2e année\\react-native\\AllForOne",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\silve\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\silve\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-KDBRL46",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-KDBRL46",
+    "USERNAME": "silve",
+    "USERPROFILE": "C:\\Users\\silve",
+    "VIPSHOME": "\\\\?\\C:\\Users\\silve\\AppData\\Roaming\\npm\\node_modules\\expo-cli\\node_modules\\sharp\\build\\Release",
+    "windir": "C:\\WINDOWS",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\Program Files\\AVAST Software\\Avast\\aswhook.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\System32\\wshbth.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll"
+  ]
+}

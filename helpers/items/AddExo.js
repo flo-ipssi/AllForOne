@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import {ScrollView, Picker, Platform, StyleSheet, TextInput, View, Text, FlatList, Button, Modal } from "react-native";
+import {ScrollView, Picker, Platform, StyleSheet, TextInput, View, Text, TouchableOpacity, Button, Modal } from "react-native";
 import {getData} from '../../api/MuscleData'
 import ActionSheet from 'react-native-actionsheet'
 
 const BLUE = "#428AF8"
 const LIGHT_GRAY = "#D3D3D3"
-
+const exercices = ['Soulevé de terre', 'Développé couché', 'Développé militaire', 'Squat', 'Curl', 'cancel'] 
 export default class AddExo extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,8 @@ export default class AddExo extends React.Component {
       data: getData(),
       isFocused: false,
       exercice: '',
-      serie:  []
+      serie:  [],
+      value:''
     };
   }
 
@@ -31,8 +32,6 @@ export default class AddExo extends React.Component {
     }
   }
 
-
-
   _handleInputWeight = (itemValue) => {   
     var l = parseInt(itemValue) 
     var tab = []
@@ -47,22 +46,26 @@ export default class AddExo extends React.Component {
   showActionSheet = () => {
     this.ActionSheet.show()
   }
-
+  
   render() {
     const {isFocused, serie, data, exercice} = this.state
     const { onFocus, onBlur, ...otherProps} = this.props
     return (
       <ScrollView style={styles.container}>
       <View>
-        <Text onPress={this.showActionSheet}>Open ActionSheet</Text>
+        
+        <TouchableOpacity style={styles.textInputExo} onPress= {this.showActionSheet}>
+          <Text style={{fontSize:15}}>Choisissez votre exercice</Text>
+        </TouchableOpacity>
         <ActionSheet
           ref={o => this.ActionSheet = o}
-          title={'Which one do you like ?'}
-          options={['Apple', 'Banana', 'Apple', 'Banana', 'Apple', 'Banana', 'cancel']}
+          title={'SELECTION'}
+          options={exercices}
           cancelButtonIndex={2}
           destructiveButtonIndex={1}
-          onPress={(index) => { /* do something */ }}
+          onPress={(value) => { this.setState({value})  }}
         />
+        <Text style={{fontSize:20, marginLeft:50, marginVertical:10}}>{exercices[this.state.value]}</Text>
       </View>
         <View style={styles.content}>
           <Picker
@@ -95,7 +98,7 @@ export default class AddExo extends React.Component {
         <View style={{ marginTop: 20 }}>
           <Button
             title="Ajouter"
-            color="#841584"
+            color="#2196F3"
             accessibilityLabel="Ajouter"
           />
         </View>
@@ -112,7 +115,28 @@ const styles = StyleSheet.create({
     padding:2,
     marginTop : 10, 
     width : 300,
-  }, 
+  },
+  textInputExo :{
+    width:300,
+    borderRadius: 4, 
+    borderWidth: 2,   
+    height: 60,  
+    borderColor: '#d6d7da',  
+    marginBottom: 10,
+    paddingHorizontal:10,
+    paddingTop:10,
+  },
+  selected :{
+    width:300,
+    borderRadius: 4, 
+    borderWidth: 2,   
+    height: 60,  
+    borderColor: '#0C810C',  
+    marginBottom: 10,
+    paddingHorizontal:10,
+    paddingTop:10,
+    color:'#2196F3',
+  },
   stylenumber:{
     marginTop: 10,
     paddingLeft:10, 

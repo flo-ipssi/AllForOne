@@ -11,19 +11,32 @@ export default class SignIn extends React.Component {
     this.state = {email:'', password:'', error:'', loading:false}
   }
 
+  componentDidMount() {
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      this.props.navigation.navigate('Bottom')
+    }
+  }
+
   onLoginPress(){
+    String.prototype.trim = function (){
+      return this.replace(/(^\s*)|(\s*$)/g,"");
+    }
     this.setState({error:'' , loading:true});
     const{email, password} = this.state
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    if(password.length > 5){
+    firebase.auth().signInWithEmailAndPassword(email.trim(), password)
      .then(()=> {
         console.log(email)
         this.setState({error:'' , loading:false});
         this.props.navigation.navigate('Bottom')
      })
      .catch(() => {
-      this.setState({error:'Authentification failed' , loading:false});
+      this.setState({error:'Echec de l\'authentification ', loading:false});
      })
-    this.props.navigation.navigate('Bottom')
+    }else{
+      this.setState({error:'Mauvaise saisie du mot de passe/identifiant' , loading:false});
+    }
   }
   
 
@@ -39,8 +52,8 @@ export default class SignIn extends React.Component {
               </TouchableOpacity>
 
               <TouchableOpacity onPress={ () => this.props.navigation.push('SignUp') }>
-                <View style={styles.button}>
-                  <Text style={styles.buttonText}>Inscription</Text>
+                <View style={styles.buttonInscription}>
+                  <Text style={styles.buttonTextInscription}>Inscription</Text>
                 </View>
               </TouchableOpacity>
       </View>
@@ -115,6 +128,19 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff'
+  },
+  buttonInscription:{
+    marginTop: 15,
+    padding: 10,
+    width: 200,
+    backgroundColor: '#FFF',
+    borderRadius: 30,
+    alignItems: 'center',
+    borderColor :'#333',
+    borderWidth :2,
+  },
+  buttonTextInscription: {
+    color: '#333'
   }
   
 });
